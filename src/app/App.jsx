@@ -1,8 +1,12 @@
+import ThemeProviderComponent from "./styles/theme/ThemeProvider";
+
 function App() {
   return (
-    <>
-      <div>dfgdf</div>
-    </>
+    <div>
+      <ThemeProviderComponent>
+        <p>dsfsdfsdfsd</p>
+      </ThemeProviderComponent>
+    </div>
   );
 }
 

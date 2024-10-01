@@ -7,6 +7,8 @@ export default defineConfig({
   resolve: {
     alias: {
       app: "/src/app/",
+      utils: "/src/utils/",
+      graphics: "/src/graphics/",
     },
   },
 });

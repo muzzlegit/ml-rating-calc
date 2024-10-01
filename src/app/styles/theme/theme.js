@@ -2,9 +2,14 @@ import getColorToken from "./getColorToken";
 
 export const theme = {
   colors: {
-    token1: getColorToken("#FFFFFF"),
-    token2: getColorToken("#000000"),
-
-    token5: getColorToken("#BB0A01"),
+    white: getColorToken("#FFFFFF"),
+    black: getColorToken("#000000"),
+    primary: getColorToken("#294b77"),
+    secondary: getColorToken("#111728"),
+    text: getColorToken("#DDDDBD"),
+    textAcent: getColorToken("#8397a7"),
+    red: getColorToken("#BB0A01"),
+    green: getColorToken("#06EC38"),
+    orange: getColorToken("#F7AD0E"),
   },
 };

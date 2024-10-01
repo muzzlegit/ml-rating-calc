@@ -1,12 +1,13 @@
+import RootLayout from "./layout/RootLayout";
 import ThemeProviderComponent from "./styles/theme/ThemeProvider";
 
 function App() {
   return (
-    <div>
-      <ThemeProviderComponent>
-        <p>dsfsdfsdfsd</p>
-      </ThemeProviderComponent>
-    </div>
+    <ThemeProviderComponent>
+      <RootLayout>
+        <div>test</div>
+      </RootLayout>
+    </ThemeProviderComponent>
   );
 }
 

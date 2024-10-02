@@ -19,7 +19,7 @@ export default TextInput;
 TextInput.propTypes = {
   id: PropTypes.string,
   placeholder: PropTypes.string,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   handleChange: PropTypes.func.isRequired,
   styles: PropTypes.object,
 };

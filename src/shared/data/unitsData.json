@@ -1,0 +1,50 @@
+{
+  "porter": {
+    "1": { "gold": 3, "wood": 25, "grain": 0, "iron": 0 },
+    "2": { "gold": 4, "wood": 12, "grain": 4, "iron": 0 },
+    "3": { "gold": 5, "wood": 0, "grain": 6, "iron": 1 },
+    "4": { "gold": 10, "wood": 0, "grain": 8, "iron": 1 }
+  },
+  "swordsman": {
+    "1": { "gold": 5, "wood": 60, "grain": 0, "iron": 0 },
+    "2": { "gold": 7, "wood": 67, "grain": 8, "iron": 0 },
+    "3": { "gold": 10, "wood": 0, "grain": 12, "iron": 15 },
+    "4": { "gold": 15, "wood": 0, "grain": 15, "iron": 20 }
+  },
+  "cavalier": {
+    "1": { "gold": 13, "wood": 85, "grain": 0, "iron": 0 },
+    "2": { "gold": 19, "wood": 0, "grain": 31, "iron": 0 },
+    "3": { "gold": 26, "wood": 0, "grain": 42, "iron": 2 },
+    "4": { "gold": 35, "wood": 0, "grain": 45, "iron": 3 }
+  },
+  "flying": {
+    "1": { "gold": 16, "wood": 118, "grain": 0, "iron": 0 },
+    "2": { "gold": 20, "wood": 0, "grain": 42, "iron": 0 },
+    "3": { "gold": 27, "wood": 0, "grain": 49, "iron": 3 },
+    "4": { "gold": 40, "wood": 0, "grain": 40, "iron": 10 }
+  },
+  "archer": {
+    "1": { "gold": 16, "wood": 158, "grain": 0, "iron": 0 },
+    "2": { "gold": 26, "wood": 168, "grain": 15, "iron": 0 },
+    "3": { "gold": 33, "wood": 0, "grain": 22, "iron": 32 },
+    "4": { "gold": 35, "wood": 0, "grain": 25, "iron": 35 }
+  },
+  "healer": {
+    "1": { "gold": 25, "wood": 0, "grain": 200, "iron": 35 },
+    "2": { "gold": 35, "wood": 0, "grain": 300, "iron": 45 },
+    "3": { "gold": 50, "wood": 0, "grain": 400, "iron": 60 },
+    "4": { "gold": 60, "wood": 0, "grain": 450, "iron": 70 }
+  },
+  "mercenary": {
+    "1": { "gold": 75, "wood": 0, "grain": 0, "iron": 0 },
+    "2": { "gold": 90, "wood": 0, "grain": 0, "iron": 0 },
+    "3": { "gold": 105, "wood": 0, "grain": 0, "iron": 0 },
+    "4": { "gold": 120, "wood": 0, "grain": 0, "iron": 0 }
+  },
+  "mage": {
+    "1": { "gold": 80, "wood": 0, "grain": 0, "iron": 107 },
+    "2": { "gold": 118, "wood": 0, "grain": 0, "iron": 150 },
+    "3": { "gold": 190, "wood": 0, "grain": 0, "iron": 200 },
+    "4": { "gold": 250, "wood": 0, "grain": 0, "iron": 250 }
+  }
+}

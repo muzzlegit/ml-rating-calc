@@ -1,4 +1,4 @@
-import deepCopy from "./deepCopy";
+import deepCopy from "../helpers/deepCopy";
 
 const useLocalStorage = (key) => {
   const setItem = (value) => {

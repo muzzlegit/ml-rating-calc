@@ -3,8 +3,10 @@
     "baseUrl": "src",
     "paths": {
       "app/*": ["app/*"],
-      "utils/*": ["utils/*"],
-      "graphics/*": ["graphics/*"]
+      "components/*": ["components/*"],
+      "assets/*": ["assets/*"],
+      "store/*": ["store/*"],
+      "shared/*": ["shared/*"]
     }
   },
   "include": ["src"]

@@ -7,8 +7,10 @@ export default defineConfig({
   resolve: {
     alias: {
       app: "/src/app/",
-      utils: "/src/utils/",
-      graphics: "/src/graphics/",
+      assets: "/src/assets/",
+      components: "/src/components/",
+      store: "/src/store/",
+      shared: "/src/shared/",
     },
   },
 });

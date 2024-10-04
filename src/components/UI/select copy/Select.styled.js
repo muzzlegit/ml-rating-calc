@@ -1,8 +1,11 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div({
+  height: "100%",
   display: "flex",
-  flexWrap: "wrap",
   alignItems: "center",
-  gap: "12px",
+});
+
+export const SelectBox = styled.select({
+  height: "100%",
 });

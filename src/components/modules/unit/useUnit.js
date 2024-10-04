@@ -7,25 +7,22 @@ const useUnit = (unitName) => {
   const changeUnit = useCalcStore((state) => state.changeUnit);
 
   const handleUnitQuantity = useCallback(
-    (e) => {
-      const { id, value } = e.currentTarget;
+    (value) => {
       const quantity = Number(value);
       if (isNaN(quantity)) return 0;
-      changeUnit(id, { quantity });
+      changeUnit(unitName, { quantity });
     },
-    [changeUnit]
+    [changeUnit, unitName]
   );
 
   const handleUnitLevel = useCallback(
-    (e) => {
-      const { id: name, value: level } = e.currentTarget;
-      console.log(name);
-      const unitData = getUnitData(name, level);
+    (level) => {
+      const unitData = getUnitData(unitName, level);
       if (!unitData) return null;
       console.log(unitData);
-      changeUnit(name, { level, rating: unitData.rating });
+      changeUnit(unitName, { level, rating: unitData.rating });
     },
-    [changeUnit]
+    [changeUnit, unitName]
   );
 
   return { unit, handleUnitQuantity, handleUnitLevel };

@@ -1,14 +1,15 @@
 import PropTypes from "prop-types";
 import { InputField } from "./Input.styled";
 
-const TextInput = ({ id, placeholder = "", value, handleChange, styles }) => {
+const TextInput = ({ placeholder = "", value, handleChange, styles }) => {
   return (
     <InputField
-      id={id}
       type="text"
       placeholder={placeholder}
       value={value}
-      onChange={handleChange}
+      onChange={(e) => {
+        handleChange(e.currentTarget.value);
+      }}
       styles={styles}
     />
   );
@@ -17,7 +18,6 @@ const TextInput = ({ id, placeholder = "", value, handleChange, styles }) => {
 export default TextInput;
 
 TextInput.propTypes = {
-  id: PropTypes.string,
   placeholder: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   handleChange: PropTypes.func.isRequired,

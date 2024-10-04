@@ -5,9 +5,7 @@ import ThemeProviderComponent from "./styles/theme/ThemeProvider";
 function App() {
   return (
     <ThemeProviderComponent>
-      <RootLayout>
-        <UnitsBar />
-      </RootLayout>
+      <RootLayout UnitsBar={UnitsBar} />
     </ThemeProviderComponent>
   );
 }

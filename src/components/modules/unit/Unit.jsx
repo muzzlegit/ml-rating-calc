@@ -15,12 +15,18 @@ const Unit = ({ unitName }) => {
   return (
     <Container key={id}>
       <ImageComponent imageName={name} />
-      <TextInput id={name} value={quantity} handleChange={handleUnitQuantity} />
+      <TextInput
+        id={name}
+        value={quantity}
+        handleChange={handleUnitQuantity}
+        styles={{ width: "50px" }}
+      />
       <Select
-        id={unitName}
+        title="Уровень"
         options={LEVELS_SELECT}
-        defaultValue={level}
-        handleChange={handleUnitLevel}
+        value={level}
+        onChange={handleUnitLevel}
+        width="30px"
       />
     </Container>
   );

@@ -1,12 +1,16 @@
 import PropTypes from "prop-types";
 import { RootContainer } from "./RootLayout.styled";
 
-const RootLayout = ({ children }) => {
-  return <RootContainer>{children}</RootContainer>;
+const RootLayout = ({ UnitsBar }) => {
+  return (
+    <RootContainer>
+      <UnitsBar />
+    </RootContainer>
+  );
 };
 
 export default RootLayout;
 
 RootLayout.propTypes = {
-  children: PropTypes.node,
+  UnitsBar: PropTypes.func,
 };

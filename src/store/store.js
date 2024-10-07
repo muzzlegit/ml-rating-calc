@@ -5,11 +5,21 @@ import { immer } from "zustand/middleware/immer";
 
 const useCalcStore = create(
   devtools(
-    immer((set) => ({
+    immer((set, get) => ({
+      unitsRating: 0,
       units: getInitialUnitsList("3"),
-      changeUnit: (unit, properties) =>
+      getUnit: (unit) => get().units[unit],
+      increaseUnitsRating: (rating) =>
         set((state) => {
-          state.units[unit] = { ...state.units[unit], ...properties };
+          state.unitsRating += rating;
+        }),
+      decreaseUnitsRating: (rating) =>
+        set((state) => {
+          state.unitsRating -= rating;
+        }),
+      changeUnit: (unit, updatedUnit) =>
+        set((state) => {
+          state.units[unit] = { ...updatedUnit };
         }),
     })),
     { name: "rating-calc" }

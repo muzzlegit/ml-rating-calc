@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import { RootContainer } from "./RootLayout.styled";
 
-const RootLayout = ({ UnitsBar }) => {
+const RootLayout = ({ UnitsBar, RatingsTable }) => {
   return (
     <RootContainer>
+      <RatingsTable />
       <UnitsBar />
     </RootContainer>
   );
@@ -12,5 +13,6 @@ const RootLayout = ({ UnitsBar }) => {
 export default RootLayout;
 
 RootLayout.propTypes = {
+  RatingsTable: PropTypes.func,
   UnitsBar: PropTypes.func,
 };

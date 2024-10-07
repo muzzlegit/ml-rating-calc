@@ -1,4 +1,8 @@
-import { getInitialUnitsList, getResourcesList } from "shared/helpers";
+import {
+  getBuildingsList,
+  getInitialUnitsList,
+  getResourcesList,
+} from "shared/helpers";
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
@@ -10,6 +14,7 @@ const useCalcStore = create(
       resourcesRating: 0,
       units: getInitialUnitsList("3"),
       resources: getResourcesList(),
+      buildings: getBuildingsList(),
       getUnit: (unit) => get().units[unit],
       getResource: (resource) => get().resources[resource],
       increaseRating: (type, rating) =>

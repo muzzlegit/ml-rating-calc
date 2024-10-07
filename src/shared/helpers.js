@@ -2,6 +2,7 @@ import canvas from "assets/images/images.webp";
 import map from "assets/maps/images.map.json";
 import { nanoid } from "nanoid";
 import { UNITS_NAMES } from "./constants";
+import buildingsData from "./data/buildingsData.json";
 import resourcesData from "./data/recourcesData.json";
 import unitsData from "./data/unitsData.json";
 import "./types.js";
@@ -142,4 +143,40 @@ export function getResourcesList() {
     list[resource] = { quantity: 0, coefficient };
   });
   return list;
+}
+
+/**
+ * генерує список назв будывель
+ */
+
+export function getBuildingsNames() {
+  return Object.keys(buildingsData);
+}
+
+/**
+ * генерує стартовий список будівель
+ */
+
+export function getBuildingsList() {
+  let list = {};
+  Object.entries(buildingsData).forEach(([buildingName, levels]) => {
+    list[buildingName] = getLevelsList(levels);
+  });
+  return list;
+
+  function getLevelsList(levels) {
+    let list = {};
+    Object.entries(levels).forEach(([level, resources]) => {
+      list[level] = { rating: getBuildingRating(resources), quantity: 0 };
+    });
+    return list;
+  }
+
+  function getBuildingRating(resourcesObj) {
+    let rating = 0;
+    Object.entries(resourcesObj).forEach(([resource, amount]) => {
+      rating += amount * resourcesData[resource];
+    });
+    return rating;
+  }
 }

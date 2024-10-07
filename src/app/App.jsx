@@ -1,5 +1,5 @@
 import { RatingsTable } from "components/common";
-import { ResourcesBar, UnitsBar } from "components/modules";
+import { BuildingsList, ResourcesBar, UnitsBar } from "components/modules";
 import RootLayout from "./layout/RootLayout";
 import ThemeProviderComponent from "./styles/theme/ThemeProvider";
 
@@ -10,6 +10,7 @@ function App() {
         UnitsBar={UnitsBar}
         RatingsTable={RatingsTable}
         ResourcesBar={ResourcesBar}
+        BuildingsList={BuildingsList}
       />
     </ThemeProviderComponent>
   );

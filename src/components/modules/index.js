@@ -1,3 +1,4 @@
+import ResourcesBar from "./resources/ResourcesBar/ResourcesBar";
 import UnitsBar from "./unitsBar/UnitsBar";
 
-export { UnitsBar };
+export { ResourcesBar, UnitsBar };

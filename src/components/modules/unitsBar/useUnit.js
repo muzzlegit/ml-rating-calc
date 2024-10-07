@@ -5,8 +5,8 @@ import useCalcStore from "store/store";
 const useUnit = (unitName) => {
   const unit = useCalcStore((state) => state.units?.[unitName]);
   const getUnit = useCalcStore((state) => state.getUnit);
-  const increaseRating = useCalcStore((state) => state.increaseUnitsRating);
-  const decreaseRating = useCalcStore((state) => state.decreaseUnitsRating);
+  const increaseRating = useCalcStore((state) => state.increaseRating);
+  const decreaseRating = useCalcStore((state) => state.decreaseRating);
   const changeUnit = useCalcStore((state) => state.changeUnit);
 
   const updateUnit = useCallback(
@@ -17,8 +17,8 @@ const useUnit = (unitName) => {
       changeUnit(unitName, updatedUnit);
       const prevRating = currentUnit.rating * currentUnit.quantity;
       const newRating = updatedUnit.rating * updatedUnit.quantity;
-      decreaseRating(prevRating);
-      increaseRating(newRating);
+      decreaseRating("unitsRating", prevRating);
+      increaseRating("unitsRating", newRating);
     },
     [changeUnit, decreaseRating, getUnit, increaseRating, unitName]
   );

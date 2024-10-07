@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { UNITS_NAMES } from "shared/constants";
-import Unit from "../unit/Unit";
 import { Container } from "./UnitsBar.styled";
+import Unit from "./atoms/unit/Unit";
 
 const UnitsBar = () => {
   return (

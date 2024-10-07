@@ -1,4 +1,4 @@
-import { getInitialUnitsList } from "shared/helpers";
+import { getInitialUnitsList, getResourcesList } from "shared/helpers";
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
@@ -7,19 +7,29 @@ const useCalcStore = create(
   devtools(
     immer((set, get) => ({
       unitsRating: 0,
+      resourcesRating: 0,
       units: getInitialUnitsList("3"),
+      resources: getResourcesList(),
       getUnit: (unit) => get().units[unit],
-      increaseUnitsRating: (rating) =>
+      getResource: (resource) => get().resources[resource],
+      increaseRating: (type, rating) =>
         set((state) => {
-          state.unitsRating += rating;
+          state[type] += rating;
         }),
-      decreaseUnitsRating: (rating) =>
+      decreaseRating: (type, rating) =>
         set((state) => {
-          state.unitsRating -= rating;
+          state[type] -= rating;
         }),
       changeUnit: (unit, updatedUnit) =>
         set((state) => {
-          state.units[unit] = { ...updatedUnit };
+          state.units[unit] = { ...state.units[unit], ...(updatedUnit ?? {}) };
+        }),
+      changeResourceQuantity: (resource, quantity) =>
+        set((state) => {
+          state.resources[resource] = {
+            ...state.resources[resource],
+            quantity,
+          };
         }),
     })),
     { name: "rating-calc" }

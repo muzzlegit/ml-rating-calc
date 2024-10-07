@@ -2,8 +2,8 @@ import { Select, TextInput } from "components/UI";
 import { ImageComponent } from "components/common";
 import PropTypes from "prop-types";
 import { LEVELS_SELECT, UNITS_NAMES } from "shared/constants";
+import useUnit from "../../useUnit";
 import { Container } from "./Unit.styled";
-import useUnit from "./useUnit";
 
 const Unit = ({ unitName }) => {
   const { unit, handleUnitQuantity, handleUnitLevel } = useUnit(unitName);

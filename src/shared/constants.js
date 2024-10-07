@@ -9,6 +9,8 @@ export const UNITS_NAMES = [
   "mage",
 ];
 
+export const RESOUCES_NAMES = ["gold", "wood", "stone", "grain", "iron"];
+
 export const LEVELS_SELECT = [
   { label: "1", value: "1" },
   { label: "2", value: "2" },

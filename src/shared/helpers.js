@@ -131,3 +131,15 @@ export function getResourceCoefficient(resource) {
   const coefficient = resourcesData?.[resource];
   return coefficient ?? null;
 }
+
+/**
+ * генерує початковий список ресурсів
+ */
+
+export function getResourcesList() {
+  const list = {};
+  Object.entries(resourcesData).forEach(([resource, coefficient]) => {
+    list[resource] = { quantity: 0, coefficient };
+  });
+  return list;
+}

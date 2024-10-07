@@ -18,5 +18,5 @@ const ImageComponent = ({ imageName }) => {
 export default ImageComponent;
 
 ImageComponent.propTypes = {
-  imageName: PropTypes.string.isRequired,
+  imageName: PropTypes.string,
 };

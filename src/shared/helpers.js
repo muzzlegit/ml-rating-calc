@@ -4,6 +4,7 @@ import { nanoid } from "nanoid";
 import { UNITS_NAMES } from "./constants";
 import buildingsData from "./data/buildingsData.json";
 import resourcesData from "./data/recourcesData.json";
+import serversData from "./data/serversData.json";
 import unitsData from "./data/unitsData.json";
 import "./types.js";
 
@@ -160,23 +161,50 @@ export function getBuildingsNames() {
 export function getBuildingsList() {
   let list = {};
   Object.entries(buildingsData).forEach(([buildingName, levels]) => {
-    list[buildingName] = getLevelsList(levels);
+    list[buildingName] = getLevelsList(levels, buildingName);
   });
   return list;
 
-  function getLevelsList(levels) {
+  function getLevelsList(levels, buildingName) {
     let list = {};
-    Object.entries(levels).forEach(([level, resources]) => {
-      list[level] = { rating: getBuildingRating(resources), quantity: 0 };
-    });
+    const startRating = buildingName === "Центральное здание" ? 1000000 : 0;
+    Object.entries(levels).reduce((acc, [level, resources]) => {
+      const rating = getBuildingRating(resources);
+      list[level] = { rating: rating + acc + startRating, quantity: 0 };
+      return (acc += rating);
+    }, 0);
     return list;
   }
 
   function getBuildingRating(resourcesObj) {
     let rating = 0;
     Object.entries(resourcesObj).forEach(([resource, amount]) => {
-      rating += amount * resourcesData[resource];
+      const resourceValue = resourcesData[resource] || 0;
+      rating += amount * resourceValue;
     });
     return rating;
   }
+}
+
+/**
+ * перевіряє на число
+ * @param {string|number} value
+ * @returns {number} number
+ */
+
+export function checkForNumber(value) {
+  const number = Number(value);
+  return isNaN(number) ? 0 : number;
+}
+
+export function getServersOptions() {
+  const list = [];
+  Object.entries(serversData).forEach(([server, coefficient]) => {
+    list.push({ label: server, value: coefficient });
+  });
+  return list;
+}
+
+export function getServerCoefficient(server) {
+  return serversData[server] || null;
 }

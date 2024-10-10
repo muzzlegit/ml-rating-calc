@@ -1,39 +1,33 @@
-import { TextInput } from "components/UI";
 import { ImageComponent } from "components/common";
 import PropTypes from "prop-types";
 import { getBuildingsNames } from "shared/helpers";
 import useBuilding from "../../useBuilding";
-import { Container, FlexWrap, LevelWrap, Name } from "./Building.styled";
+import LevelInput from "../LevelInput/LevelInput";
+import { Container, FlexCenterWrap, Head, Name } from "./Building.styled";
 
 const Building = ({ buildingName }) => {
-  const { building } = useBuilding(buildingName);
+  const { building, handleBuildingQuantity } = useBuilding(buildingName);
   if (!building) return null;
 
   return (
     <Container title={buildingName}>
-      <ImageComponent imageName={buildingName} />
-      <Name>{buildingName}</Name>
-      {Object.entries(building).map(([level, buildingData]) => {
-        if (!buildingData) return null;
-        return (
-          <FlexWrap key={buildingName + level}>
-            <LevelWrap>
-              {level === "8" ? (
-                <ImageComponent imageName="perfect" />
-              ) : (
-                <div title="Уровень">{level}</div>
-              )}
-            </LevelWrap>
-            <TextInput
-              value={buildingData.quantity}
-              handleChange={() => {
-                console.log(level);
-              }}
-              styles={{ width: "40px" }}
+      <Head>
+        <ImageComponent imageName={buildingName} />
+        <Name>{buildingName.replaceAll(" ", "\n")}</Name>
+      </Head>
+      <FlexCenterWrap>
+        {Object.entries(building).map(([level, buildingData]) => {
+          if (!buildingData) return null;
+          return (
+            <LevelInput
+              key={level + buildingData.rating}
+              building={buildingName}
+              level={level}
+              handleQuantity={handleBuildingQuantity}
             />
-          </FlexWrap>
-        );
-      })}
+          );
+        })}
+      </FlexCenterWrap>
     </Container>
   );
 };

@@ -13,7 +13,6 @@ const Select = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const selectRef = useRef(null);
-
   const handleSelect = (selectedValue) => {
     onChange(selectedValue);
     setIsOpen(false);
@@ -55,15 +54,26 @@ const Select = ({
           title={title}
           onClick={() => setIsOpen((prev) => !prev)}
         >
-          {value
-            ? options.find((option) => option.value === value)?.label
-            : placeholder}
+          <div>
+            {value
+              ? options.find((option) => option.label === value)?.label
+              : placeholder}
+          </div>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+          >
+            <path d="m17 10l-5 6l-5-6z" />
+          </svg>
         </Button>
         {isOpen && (
           <List>
             {options.map((option) => (
               <Item
-                key={option.value}
+                key={option.label}
                 onClick={() => handleSelect(option.value)}
               >
                 {option.label}

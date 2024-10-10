@@ -12,11 +12,18 @@ const useCalcStore = create(
     immer((set, get) => ({
       unitsRating: 0,
       resourcesRating: 0,
+      buildingsRating: 0,
+      server: "Шахтерский",
       units: getInitialUnitsList("3"),
       resources: getResourcesList(),
       buildings: getBuildingsList(),
       getUnit: (unit) => get().units[unit],
       getResource: (resource) => get().resources[resource],
+      getBuilding: (building, level) => get().buildings[building][level],
+      setServer: (server) =>
+        set((state) => {
+          state.server = server;
+        }),
       increaseRating: (type, rating) =>
         set((state) => {
           state[type] += rating;
@@ -35,6 +42,10 @@ const useCalcStore = create(
             ...state.resources[resource],
             quantity,
           };
+        }),
+      changeBuildingQuantity: (buildingName, level, quantity) =>
+        set((state) => {
+          state.buildings[buildingName][level].quantity = quantity;
         }),
     })),
     { name: "rating-calc" }

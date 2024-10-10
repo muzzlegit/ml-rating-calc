@@ -1,10 +1,10 @@
 {
   "Центральное здание": {
-    "1": { "gold": 1000000, "wood": 0, "stone": 0, "iron": 0 },
-    "2": { "gold": 1000000, "wood": 3000, "stone": 800, "iron": 0 },
-    "3": { "gold": 1001000, "wood": 4000, "stone": 1000, "iron": 0 },
-    "4": { "gold": 1001500, "wood": 5000, "stone": 1500, "iron": 0 },
-    "5": { "gold": 1002000, "wood": 7000, "stone": 2500, "iron": 0 }
+    "1": { "gold": 0, "wood": 0, "stone": 0, "iron": 0 },
+    "2": { "gold": 0, "wood": 3000, "stone": 800, "iron": 0 },
+    "3": { "gold": 1000, "wood": 4000, "stone": 1000, "iron": 0 },
+    "4": { "gold": 1500, "wood": 5000, "stone": 1500, "iron": 0 },
+    "5": { "gold": 2000, "wood": 7000, "stone": 2500, "iron": 0 }
   },
   "Шахта": {
     "1": { "gold": 2000000, "wood": 0, "stone": 0, "iron": 0 }

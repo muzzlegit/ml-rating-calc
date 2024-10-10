@@ -26,7 +26,7 @@ const Unit = ({ unitName }) => {
         options={LEVELS_SELECT}
         value={level}
         onChange={handleUnitLevel}
-        width="30px"
+        width="40px"
       />
     </Container>
   );

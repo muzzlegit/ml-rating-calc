@@ -7,27 +7,29 @@ export const Container = styled.div({
   gap: "4px",
 });
 
-export const Wrap = styled.div(({ width }) => ({
-  position: "relative",
-  width,
-}));
-
 export const Label = styled.div(({ theme }) => ({
   fontSize: "14px",
   color: theme.colors?.text[100],
 }));
 
+export const Wrap = styled.div(({ width }) => ({
+  position: "relative",
+  width,
+}));
+
 export const Button = styled.div(({ theme }) => ({
   width: "100%",
   height: "100%",
-  padding: "2px 4px",
+  padding: "2px 4px 2px 8px",
   display: "flex",
   alignItems: "center",
-  justifyContent: "center",
+  justifyContent: "end",
+  gap: "4px",
   borderRadius: "4px",
   cursor: "pointer",
   fontSize: "14px",
   fontWeight: 700,
+  fill: theme.colors?.secondary[100],
   color: theme.colors?.secondary[100],
   backgroundColor: theme.colors?.text[100],
 }));

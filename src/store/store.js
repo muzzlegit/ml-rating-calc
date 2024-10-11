@@ -14,6 +14,7 @@ const useCalcStore = create(
       resourcesRating: 0,
       buildingsRating: 0,
       server: "Шахтерский",
+      stars: 1,
       units: getInitialUnitsList("3"),
       resources: getResourcesList(),
       buildings: getBuildingsList(),
@@ -23,6 +24,10 @@ const useCalcStore = create(
       setServer: (server) =>
         set((state) => {
           state.server = server;
+        }),
+      setStars: (quantity) =>
+        set((state) => {
+          state.stars = quantity;
         }),
       increaseRating: (type, rating) =>
         set((state) => {

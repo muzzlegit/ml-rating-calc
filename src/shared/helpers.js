@@ -3,6 +3,7 @@ import map from "assets/maps/images.map.json";
 import { nanoid } from "nanoid";
 import { UNITS_NAMES } from "./constants";
 import buildingsData from "./data/buildingsData.json";
+import ratingData from "./data/ratingData.json";
 import resourcesData from "./data/recourcesData.json";
 import serversData from "./data/serversData.json";
 import unitsData from "./data/unitsData.json";
@@ -199,12 +200,58 @@ export function checkForNumber(value) {
 
 export function getServersOptions() {
   const list = [];
-  Object.entries(serversData).forEach(([server, coefficient]) => {
-    list.push({ label: server, value: coefficient });
+  Object.keys(serversData).forEach((server) => {
+    list.push({ label: server, value: server });
   });
   return list;
 }
 
 export function getServerCoefficient(server) {
   return serversData[server] || null;
+}
+
+export function getServerType(server) {
+  switch (server) {
+    case "Шахтерский":
+      return "miners";
+    case "Геройский":
+      return "miners";
+    case "Экономический":
+      return "miners";
+    case "Стратегический":
+      return "miners";
+    case "Оперативный":
+      return "miners";
+    case "Тактический":
+      return "miners";
+    case "Боевой":
+      return "battle";
+    default:
+      return "miners";
+  }
+}
+
+export function getRatingData(currentRating, server) {
+  const ratingList = Object.entries(ratingData).map(
+    ([rank, { level, rating }]) => ({
+      rank,
+      level,
+      rating: rating[getServerType(server)],
+    })
+  );
+  let rating = ratingList[0];
+  if (currentRating > ratingList[ratingList.length - 1]?.rating) {
+    rating = ratingList[ratingList.length - 1];
+  } else {
+    ratingList.forEach((item, index) => {
+      const nextIndex = index + 1;
+      if (
+        ratingList[nextIndex] &&
+        currentRating > item.rating &&
+        currentRating < ratingList[nextIndex]?.rating
+      )
+        rating = item;
+    });
+  }
+  return rating;
 }

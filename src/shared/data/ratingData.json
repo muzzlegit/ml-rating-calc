@@ -1,0 +1,19 @@
+{
+  "Эсквайр": { "level": 1, "rating": { "miners": 0, "battle": 0 } },
+  "Капитан": {
+    "level": 2,
+    "rating": { "miners": 60000000, "battle": 25000000 }
+  },
+  "Магистр": {
+    "level": 3,
+    "rating": { "miners": 125000000, "battle": 60000000 }
+  },
+  "Маршал": {
+    "level": 4,
+    "rating": { "miners": 350000000, "battle": 150000000 }
+  },
+  "Сюзерен": {
+    "level": 5,
+    "rating": { "miners": 650000000, "battle": 500000000 }
+  }
+}

@@ -3,15 +3,16 @@ import { getServersOptions } from "shared/helpers";
 import useServer from "./useServer";
 
 const ServerSelector = () => {
-  const { server } = useServer();
+  const { server, handleServesSelect } = useServer();
+
   return (
     <div>
       <Select
         label="Сервер"
         value={server}
         options={getServersOptions()}
-        onChange={() => {}}
-        width="160px"
+        onChange={handleServesSelect}
+        width="140px"
       />
     </div>
   );

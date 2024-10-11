@@ -1,4 +1,4 @@
-import { RatingsTable } from "components/common";
+import { RatingsTable, Stars } from "components/common";
 import {
   BuildingsList,
   ResourcesBar,
@@ -12,6 +12,7 @@ function App() {
   return (
     <ThemeProviderComponent>
       <RootLayout
+        Stars={Stars}
         ServerSelector={ServerSelector}
         UnitsBar={UnitsBar}
         RatingsTable={RatingsTable}

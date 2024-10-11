@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { RootContainer } from "./RootLayout.styled";
 
 const RootLayout = ({
+  Stars,
   UnitsBar,
   RatingsTable,
   ResourcesBar,
@@ -10,6 +11,7 @@ const RootLayout = ({
 }) => {
   return (
     <RootContainer>
+      <Stars />
       <RatingsTable />
       <ServerSelector />
       <UnitsBar />
@@ -22,6 +24,7 @@ const RootLayout = ({
 export default RootLayout;
 
 RootLayout.propTypes = {
+  Stars: PropTypes.func,
   RatingsTable: PropTypes.func,
   ServerSelector: PropTypes.func,
   UnitsBar: PropTypes.func,

@@ -16,7 +16,6 @@ const RootLayout = ({
         <Stars />
         <RatingsTable />
         <ServerSelector />
-
         <UnitsBar />
         <ResourcesBar />
       </FlexCol>

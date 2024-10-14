@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { RootContainer } from "./RootLayout.styled";
+import { FlexCol, RootContainer } from "./RootLayout.styled";
 
 const RootLayout = ({
   Stars,
@@ -11,12 +11,15 @@ const RootLayout = ({
 }) => {
   return (
     <RootContainer>
-      <Stars />
-      <RatingsTable />
-      <ServerSelector />
-      <UnitsBar />
-      <ResourcesBar />
       <BuildingsList />
+      <FlexCol>
+        <Stars />
+        <RatingsTable />
+        <ServerSelector />
+
+        <UnitsBar />
+        <ResourcesBar />
+      </FlexCol>
     </RootContainer>
   );
 };

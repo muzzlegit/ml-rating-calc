@@ -4,6 +4,7 @@ import useCalcStore from "store/store";
 import {
   CommonRating,
   Container,
+  FlexCol,
   FlexWrap,
   Label,
   Rank,
@@ -31,11 +32,11 @@ const RatingsTable = () => {
 
   return (
     <Container>
-      <FlexWrap>
+      <div>
         <Rank>{rank}</Rank>
         <CommonRating>{rating.toLocaleString("en-US")}</CommonRating>
-      </FlexWrap>
-      <FlexWrap>
+      </div>
+      <FlexCol>
         <FlexWrap>
           <Label>Рейтинг армии:</Label>
           <Rating> {unitsRating.toLocaleString("en-US")}</Rating>
@@ -54,7 +55,7 @@ const RatingsTable = () => {
           <Label>Рейтинг ресурсов: </Label>
           <Rating>{resourcesRating.toLocaleString("en-US")}</Rating>
         </FlexWrap>
-      </FlexWrap>
+      </FlexCol>
     </Container>
   );
 };

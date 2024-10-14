@@ -4,7 +4,7 @@ export const theme = {
   colors: {
     white: getColorToken("#FFFFFF"),
     black: getColorToken("#000000"),
-    primary: getColorToken("#294b77"),
+    primary: getColorToken("#1C252C"),
     secondary: getColorToken("#111728"),
     text: getColorToken("#DDDDBD"),
     textAcent: getColorToken("#8397a7"),

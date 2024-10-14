@@ -4,14 +4,20 @@ export const Container = styled.div({
   width: "100%",
   display: "flex",
   flexDirection: "column",
-  alignItems: "center",
-  gap: "4px",
+  alignItems: "start",
+  gap: "8px",
 });
 
 export const FlexWrap = styled.div({
   display: "flex",
   flexWrap: "wrap",
   alignItems: "baseline",
+  gap: "8px",
+});
+
+export const FlexCol = styled.div({
+  display: "flex",
+  flexDirection: "column",
   gap: "6px",
 });
 
@@ -32,4 +38,5 @@ export const Label = styled.div(({ theme }) => ({
 }));
 export const Rank = styled.div(({ theme }) => ({
   fontWeight: 600,
+  color: theme.colors?.textAcent[100],
 }));

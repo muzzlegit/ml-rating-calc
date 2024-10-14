@@ -3,7 +3,7 @@ import { ImageComponent } from "components/common";
 import PropTypes from "prop-types";
 import { LEVELS_SELECT, UNITS_NAMES } from "shared/constants";
 import useUnit from "../../useUnit";
-import { Container } from "./Unit.styled";
+import { Container, inputStyles } from "./Unit.styled";
 
 const Unit = ({ unitName }) => {
   const { unit, handleUnitQuantity, handleUnitLevel } = useUnit(unitName);
@@ -19,7 +19,7 @@ const Unit = ({ unitName }) => {
         id={name}
         value={quantity}
         handleChange={handleUnitQuantity}
-        styles={{ width: "50px" }}
+        styles={inputStyles}
       />
       <Select
         title="Уровень"

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div(({ theme }) => ({
   padding: "8px 4px",
-  width: "120px",
+  width: "130px",
   border: `1px solid ${theme.colors?.text[20]}`,
   borderRadius: "8px",
 }));

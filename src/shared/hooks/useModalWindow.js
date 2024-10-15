@@ -20,11 +20,11 @@ const useModalWindow = (windowRef) => {
     [windowRef]
   );
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = useCallback((event) => {
     if (event.key === "Escape") {
       setIsOpen(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -39,7 +39,7 @@ const useModalWindow = (windowRef) => {
       document.removeEventListener("click", handleOutsideClick);
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [handleOutsideClick, isOpen]);
+  }, [handleKeyDown, handleOutsideClick, isOpen]);
 
   return { isOpen, toggleWindow, handleWindow };
 };

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { theme } from "app/styles/theme/theme";
 
 export const Container = styled.div(({ theme, styles }) => ({
-  position: "absolute",
+  position: "sticky",
   zIndex: 20,
   padding: "4px",
   width: "fit-content",

@@ -1,7 +1,7 @@
 import canvas from "assets/images/images.webp";
 import map from "assets/maps/images.map.json";
 import { nanoid } from "nanoid";
-import { UNITS_NAMES } from "./constants";
+import { RANKS, UNITS_NAMES } from "./constants";
 import buildingsData from "./data/buildingsData.json";
 import ratingData from "./data/ratingData.json";
 import resourcesData from "./data/recourcesData.json";
@@ -254,4 +254,12 @@ export function getRatingData(currentRating, server) {
     });
   }
   return rating;
+}
+
+export function getRankRating(rank, server) {
+  const currentIndex = RANKS.indexOf(rank);
+
+  const nextRank = rank === "Сюзерен" ? rank : RANKS[currentIndex + 1];
+
+  return ratingData?.[nextRank]?.rating?.[getServerType(server)];
 }

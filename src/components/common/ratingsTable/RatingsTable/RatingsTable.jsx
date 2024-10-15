@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { getRatingData, getServerCoefficient } from "shared/helpers";
+import {
+  getRankRating,
+  getRatingData,
+  getServerCoefficient,
+} from "shared/helpers";
 import useCalcStore from "store/store";
 import {
   CommonRating,
@@ -10,13 +14,14 @@ import {
   Rank,
   Rating,
 } from "./RatingsTable.styled";
+import RatingBar from "./atoms/RatingBar/RatingBar";
 
 const RatingsTable = () => {
   const unitsRating = useCalcStore((state) => state.unitsRating);
   const resourcesRating = useCalcStore((state) => state.resourcesRating);
   const buildingsRating = useCalcStore((state) => state.buildingsRating);
   const setStars = useCalcStore((state) => state.setStars);
-  const [rank, setRank] = useState("Эсквайер");
+  const [rank, setRank] = useState("Эсквайр");
 
   const server = useCalcStore((state) => state.server);
   const serverCoefficient = getServerCoefficient(server);
@@ -36,6 +41,10 @@ const RatingsTable = () => {
         <Rank>{rank}</Rank>
         <CommonRating>{rating.toLocaleString("en-US")}</CommonRating>
       </div>
+      <RatingBar
+        rating={getRankRating(rank, server)}
+        currentProgress={rating}
+      />
       <FlexCol>
         <FlexWrap>
           <Label>Рейтинг армии:</Label>

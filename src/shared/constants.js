@@ -17,3 +17,5 @@ export const LEVELS_SELECT = [
   { label: "3", value: "3" },
   { label: "4", value: "4" },
 ];
+
+export const RANKS = ["Эсквайр", "Капитан", "Магистр", "Маршал", "Сюзерен"];

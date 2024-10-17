@@ -27,7 +27,10 @@ const RatingsTable = () => {
   const serverCoefficient = getServerCoefficient(server);
 
   const rating =
-    resourcesRating + unitsRating * serverCoefficient + buildingsRating;
+    resourcesRating +
+    unitsRating +
+    unitsRating * serverCoefficient +
+    buildingsRating;
 
   useEffect(() => {
     const ratingData = getRatingData(rating, server);
@@ -53,7 +56,9 @@ const RatingsTable = () => {
         <FlexWrap>
           <Label>Общий рейтинг: </Label>
           <Rating>
-            {(resourcesRating + buildingsRating).toLocaleString("en-US")}
+            {(unitsRating + resourcesRating + buildingsRating).toLocaleString(
+              "en-US"
+            )}
           </Rating>
         </FlexWrap>
         <FlexWrap>
